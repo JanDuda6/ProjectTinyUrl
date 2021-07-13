@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C552404A269DE7C60050B53D /* ParsingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5524049269DE7C60050B53D /* ParsingService.swift */; };
 		C5DDD910269DAEE8001EF502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */; };
 		C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */; };
 		C5DDD914269DAEE8001EF502 /* TinyURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD913269DAEE8001EF502 /* TinyURLViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C5524049269DE7C60050B53D /* ParsingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingService.swift; sourceTree = "<group>"; };
 		C5DDD90C269DAEE8001EF502 /* Project Tiny Url.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Tiny Url.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +103,7 @@
 			children = (
 				C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */,
 				C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */,
-				C5DDD942269DB337001EF502 /* Network */,
+				C5DDD942269DB337001EF502 /* Services */,
 				C5DDD93F269DB313001EF502 /* Model */,
 				C5DDD940269DB31E001EF502 /* ViewModel */,
 				C5DDD943269DB373001EF502 /* Controllers */,
@@ -138,12 +140,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C5DDD942269DB337001EF502 /* Network */ = {
+		C5DDD942269DB337001EF502 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				C5DDD944269DB3DA001EF502 /* ApiService.swift */,
+				C5524049269DE7C60050B53D /* ParsingService.swift */,
 			);
-			path = Network;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		C5DDD943269DB373001EF502 /* Controllers */ = {
@@ -288,6 +291,7 @@
 				C5DDD910269DAEE8001EF502 /* AppDelegate.swift in Sources */,
 				C5DDD947269DB406001EF502 /* TinyURL.swift in Sources */,
 				C5DDD945269DB3DA001EF502 /* ApiService.swift in Sources */,
+				C552404A269DE7C60050B53D /* ParsingService.swift in Sources */,
 				C5DDD949269DB9CC001EF502 /* TinyURLViewModel.swift in Sources */,
 				C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */,
 				C5DDD94B269DBCDE001EF502 /* LongURLToSend.swift in Sources */,
