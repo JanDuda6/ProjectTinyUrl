@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		C5DDD910269DAEE8001EF502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */; };
 		C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */; };
-		C5DDD914269DAEE8001EF502 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD913269DAEE8001EF502 /* ViewController.swift */; };
+		C5DDD914269DAEE8001EF502 /* TinyURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD913269DAEE8001EF502 /* TinyURLViewController.swift */; };
 		C5DDD917269DAEE8001EF502 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5DDD915269DAEE8001EF502 /* Main.storyboard */; };
 		C5DDD919269DAEEA001EF502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5DDD918269DAEEA001EF502 /* Assets.xcassets */; };
 		C5DDD91C269DAEEA001EF502 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5DDD91A269DAEEA001EF502 /* LaunchScreen.storyboard */; };
-		C5DDD927269DAEEA001EF502 /* Project_Tiny_UrlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD926269DAEEA001EF502 /* Project_Tiny_UrlTests.swift */; };
-		C5DDD932269DAEEA001EF502 /* Project_Tiny_UrlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD931269DAEEA001EF502 /* Project_Tiny_UrlUITests.swift */; };
+		C5DDD945269DB3DA001EF502 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD944269DB3DA001EF502 /* ApiService.swift */; };
+		C5DDD947269DB406001EF502 /* TinyURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD946269DB406001EF502 /* TinyURL.swift */; };
+		C5DDD949269DB9CC001EF502 /* TinyURLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD948269DB9CC001EF502 /* TinyURLViewModel.swift */; };
+		C5DDD94B269DBCDE001EF502 /* LongURLToSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD94A269DBCDE001EF502 /* LongURLToSend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,17 +40,17 @@
 		C5DDD90C269DAEE8001EF502 /* Project Tiny Url.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Tiny Url.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C5DDD913269DAEE8001EF502 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C5DDD913269DAEE8001EF502 /* TinyURLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyURLViewController.swift; sourceTree = "<group>"; };
 		C5DDD916269DAEE8001EF502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5DDD918269DAEEA001EF502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5DDD91B269DAEEA001EF502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5DDD91D269DAEEA001EF502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5DDD922269DAEEA001EF502 /* Project Tiny UrlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project Tiny UrlTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5DDD926269DAEEA001EF502 /* Project_Tiny_UrlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_Tiny_UrlTests.swift; sourceTree = "<group>"; };
-		C5DDD928269DAEEA001EF502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5DDD92D269DAEEA001EF502 /* Project Tiny UrlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project Tiny UrlUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5DDD931269DAEEA001EF502 /* Project_Tiny_UrlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_Tiny_UrlUITests.swift; sourceTree = "<group>"; };
-		C5DDD933269DAEEA001EF502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5DDD944269DB3DA001EF502 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		C5DDD946269DB406001EF502 /* TinyURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyURL.swift; sourceTree = "<group>"; };
+		C5DDD948269DB9CC001EF502 /* TinyURLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyURLViewModel.swift; sourceTree = "<group>"; };
+		C5DDD94A269DBCDE001EF502 /* LongURLToSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongURLToSend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				C5DDD90E269DAEE8001EF502 /* Project Tiny Url */,
-				C5DDD925269DAEEA001EF502 /* Project Tiny UrlTests */,
-				C5DDD930269DAEEA001EF502 /* Project Tiny UrlUITests */,
 				C5DDD90D269DAEE8001EF502 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,8 +101,11 @@
 			children = (
 				C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */,
 				C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */,
-				C5DDD913269DAEE8001EF502 /* ViewController.swift */,
-				C5DDD915269DAEE8001EF502 /* Main.storyboard */,
+				C5DDD942269DB337001EF502 /* Network */,
+				C5DDD93F269DB313001EF502 /* Model */,
+				C5DDD940269DB31E001EF502 /* ViewModel */,
+				C5DDD943269DB373001EF502 /* Controllers */,
+				C5DDD941269DB328001EF502 /* View */,
 				C5DDD918269DAEEA001EF502 /* Assets.xcassets */,
 				C5DDD91A269DAEEA001EF502 /* LaunchScreen.storyboard */,
 				C5DDD91D269DAEEA001EF502 /* Info.plist */,
@@ -110,22 +113,45 @@
 			path = "Project Tiny Url";
 			sourceTree = "<group>";
 		};
-		C5DDD925269DAEEA001EF502 /* Project Tiny UrlTests */ = {
+		C5DDD93F269DB313001EF502 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C5DDD926269DAEEA001EF502 /* Project_Tiny_UrlTests.swift */,
-				C5DDD928269DAEEA001EF502 /* Info.plist */,
+				C5DDD946269DB406001EF502 /* TinyURL.swift */,
+				C5DDD94A269DBCDE001EF502 /* LongURLToSend.swift */,
 			);
-			path = "Project Tiny UrlTests";
+			path = Model;
 			sourceTree = "<group>";
 		};
-		C5DDD930269DAEEA001EF502 /* Project Tiny UrlUITests */ = {
+		C5DDD940269DB31E001EF502 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C5DDD931269DAEEA001EF502 /* Project_Tiny_UrlUITests.swift */,
-				C5DDD933269DAEEA001EF502 /* Info.plist */,
+				C5DDD948269DB9CC001EF502 /* TinyURLViewModel.swift */,
 			);
-			path = "Project Tiny UrlUITests";
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C5DDD941269DB328001EF502 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5DDD915269DAEE8001EF502 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5DDD942269DB337001EF502 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C5DDD944269DB3DA001EF502 /* ApiService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C5DDD943269DB373001EF502 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C5DDD913269DAEE8001EF502 /* TinyURLViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +284,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5DDD914269DAEE8001EF502 /* ViewController.swift in Sources */,
+				C5DDD914269DAEE8001EF502 /* TinyURLViewController.swift in Sources */,
 				C5DDD910269DAEE8001EF502 /* AppDelegate.swift in Sources */,
+				C5DDD947269DB406001EF502 /* TinyURL.swift in Sources */,
+				C5DDD945269DB3DA001EF502 /* ApiService.swift in Sources */,
+				C5DDD949269DB9CC001EF502 /* TinyURLViewModel.swift in Sources */,
 				C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */,
+				C5DDD94B269DBCDE001EF502 /* LongURLToSend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +298,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5DDD927269DAEEA001EF502 /* Project_Tiny_UrlTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +305,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5DDD932269DAEEA001EF502 /* Project_Tiny_UrlUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
