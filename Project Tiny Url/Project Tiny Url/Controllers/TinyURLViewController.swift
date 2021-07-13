@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TinyURLViewController: UIViewController {
+
+    @IBOutlet private weak var textView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func tinyURLButtonPressed(_ sender: UIButton) {}
 }
-
