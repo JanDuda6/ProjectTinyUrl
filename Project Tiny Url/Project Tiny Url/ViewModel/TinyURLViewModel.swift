@@ -19,6 +19,7 @@ class TinyURLViewModel {
     // fetching data from api, saving response and loading old responses
     func fetchDataFromApi(completion: @escaping () -> Void) {
         apiService.performPostRequest(longURL: longURL) { [self] tinyURL in
+            // doesn't save result with no shortURL variable
             if tinyURL.shortURL != "" {
                 saveTinyURL(tinyURL: tinyURL)
                 loadTinyURL {
@@ -29,7 +30,7 @@ class TinyURLViewModel {
     }
 
     // saving response in User Defaults
-    func saveTinyURL(tinyURL: TinyURL) {
+   private func saveTinyURL(tinyURL: TinyURL) {
         var tinyURLDataArray = [Data]()
         tinyURLArray.append(tinyURL)
         for tinyURL in tinyURLArray {

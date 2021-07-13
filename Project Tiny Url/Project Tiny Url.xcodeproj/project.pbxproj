@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C552404A269DE7C60050B53D /* ParsingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5524049269DE7C60050B53D /* ParsingService.swift */; };
+		C552404C269E19870050B53D /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552404B269E19870050B53D /* AlertService.swift */; };
 		C5DDD910269DAEE8001EF502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */; };
 		C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */; };
 		C5DDD914269DAEE8001EF502 /* TinyURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD913269DAEE8001EF502 /* TinyURLViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		C5524049269DE7C60050B53D /* ParsingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingService.swift; sourceTree = "<group>"; };
+		C552404B269E19870050B53D /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		C5DDD90C269DAEE8001EF502 /* Project Tiny Url.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Tiny Url.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				C5DDD944269DB3DA001EF502 /* ApiService.swift */,
 				C5524049269DE7C60050B53D /* ParsingService.swift */,
+				C552404B269E19870050B53D /* AlertService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				C552404A269DE7C60050B53D /* ParsingService.swift in Sources */,
 				C5DDD949269DB9CC001EF502 /* TinyURLViewModel.swift in Sources */,
 				C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */,
+				C552404C269E19870050B53D /* AlertService.swift in Sources */,
 				C5DDD94B269DBCDE001EF502 /* LongURLToSend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
