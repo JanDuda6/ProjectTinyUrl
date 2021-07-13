@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LongURLToSend: Codable {
+struct LongURLToSend {
     var format: String
     var url: String
 
