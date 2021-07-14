@@ -18,7 +18,6 @@
 		C5DDD945269DB3DA001EF502 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD944269DB3DA001EF502 /* ApiService.swift */; };
 		C5DDD947269DB406001EF502 /* TinyURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD946269DB406001EF502 /* TinyURL.swift */; };
 		C5DDD949269DB9CC001EF502 /* TinyURLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD948269DB9CC001EF502 /* TinyURLViewModel.swift */; };
-		C5DDD94B269DBCDE001EF502 /* LongURLToSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD94A269DBCDE001EF502 /* LongURLToSend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		C5DDD944269DB3DA001EF502 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		C5DDD946269DB406001EF502 /* TinyURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyURL.swift; sourceTree = "<group>"; };
 		C5DDD948269DB9CC001EF502 /* TinyURLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyURLViewModel.swift; sourceTree = "<group>"; };
-		C5DDD94A269DBCDE001EF502 /* LongURLToSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongURLToSend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +109,6 @@
 				C5DDD943269DB373001EF502 /* Controllers */,
 				C5DDD941269DB328001EF502 /* View */,
 				C5DDD918269DAEEA001EF502 /* Assets.xcassets */,
-				C5DDD91A269DAEEA001EF502 /* LaunchScreen.storyboard */,
 				C5DDD91D269DAEEA001EF502 /* Info.plist */,
 			);
 			path = "Project Tiny Url";
@@ -121,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				C5DDD946269DB406001EF502 /* TinyURL.swift */,
-				C5DDD94A269DBCDE001EF502 /* LongURLToSend.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				C5DDD915269DAEE8001EF502 /* Main.storyboard */,
+				C5DDD91A269DAEEA001EF502 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,7 +295,6 @@
 				C5DDD949269DB9CC001EF502 /* TinyURLViewModel.swift in Sources */,
 				C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */,
 				C552404C269E19870050B53D /* AlertService.swift in Sources */,
-				C5DDD94B269DBCDE001EF502 /* LongURLToSend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

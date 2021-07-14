@@ -25,7 +25,7 @@ class TinyURLViewController: UIViewController {
         }
     }
 
-    @IBAction func tinyURLButtonPressed(_ sender: UIButton) {
+    @IBAction func makeItTinyButtonPressed(_ sender: UIButton) {
         if textField.text != "" {
             tinyURLVM.setLongURL(longURL: textField.text!)
             tinyURLVM.fetchDataFromApi { [self] in
@@ -36,6 +36,12 @@ class TinyURLViewController: UIViewController {
         }
     }
 
+    // add url to pasteboard
+    func addURLToPasteboard(tinyURL: String) {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = tinyURL
+        AlertService.URLCopiedToPasteboardAlert(view: self)
+    }
 }
 
 //MARK: - Table View Delegate
@@ -46,7 +52,7 @@ extension TinyURLViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reverseIndexPathRow = reverseIndexPathRow(index: indexPath)
+        let reverseIndexPathRow = reverseIndexPathRow(indexPath: indexPath)
         let tinyURLArray = tinyURLVM.getTinyURLArray()
         let cell = tableView.dequeueReusableCell(withIdentifier: "URLCell", for: indexPath)
         cell.textLabel?.text = tinyURLArray[reverseIndexPathRow].shortURL
@@ -55,21 +61,14 @@ extension TinyURLViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let reverseIndexPathRow = reverseIndexPathRow(index: indexPath)
+        let reverseIndexPathRow = reverseIndexPathRow(indexPath: indexPath)
         let tinyURLArray = tinyURLVM.getTinyURLArray()
-        addURLToClipboard(tinyURL: tinyURLArray[reverseIndexPathRow].shortURL)
-    }
-
-    // add url to pasteboard
-    func addURLToClipboard(tinyURL: String) {
-        let pasteboard = UIPasteboard.general
-        pasteboard.string = tinyURL
-        AlertService.URLCopiedToClipboardHandler(view: self)
+        addURLToPasteboard(tinyURL: tinyURLArray[reverseIndexPathRow].shortURL)
     }
 
     // reverse index for display new cell at the top
-    func reverseIndexPathRow(index: IndexPath) -> Int {
-        let reverseIndexPathRow = tinyURLVM.getTinyURLArray().count - 1 - index.row
+    func reverseIndexPathRow(indexPath: IndexPath) -> Int {
+        let reverseIndexPathRow = tinyURLVM.getTinyURLArray().count - 1 - indexPath.row
         return reverseIndexPathRow
     }
 }
