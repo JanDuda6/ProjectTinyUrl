@@ -72,7 +72,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVM-k0-Z1D">
                                         <rect key="frame" x="60" y="151" width="268" height="50"/>
-                                        <color key="backgroundColor" red="0.38216587899999999" green="0.77570205930000002" blue="0.56467789410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.38039215686274508" green="0.77647058823529413" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="P8x-IW-3h4"/>
                                         </constraints>
@@ -86,7 +86,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tinyURLButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gME-Bg-TAi"/>
+                                            <action selector="makeItTinyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gME-Bg-TAi"/>
                                         </connections>
                                     </button>
                                 </subviews>

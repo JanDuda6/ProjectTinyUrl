@@ -30,10 +30,10 @@ class TinyURLViewModel {
     }
 
     // saving response in User Defaults
-   private func saveTinyURL(tinyURL: TinyURL) {
+    private func saveTinyURL(tinyURL: TinyURL) {
         var tinyURLDataArray = [Data]()
-        tinyURLArray.append(tinyURL)
-        for tinyURL in tinyURLArray {
+        self.tinyURLArray.append(tinyURL)
+        for tinyURL in self.tinyURLArray {
             let tinyURLData = ParsingService.parseToJSON(tinyURL: tinyURL)
             tinyURLDataArray.append(tinyURLData)
         }
@@ -43,7 +43,7 @@ class TinyURLViewModel {
     // loading response from User Defaults
     func loadTinyURL(completion: @escaping () -> Void) {
         if let tinyData = UserDefaults.standard.array(forKey: "tinyData") as? Array<Data> {
-            self.tinyURLArray = ParsingService.parseFromJSON(data: tinyData)
+            self.tinyURLArray = ParsingService.parseFromJSON(tinyData: tinyData)
         }
         completion()
     }
