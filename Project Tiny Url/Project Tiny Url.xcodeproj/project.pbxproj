@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44B1952333D181E9DE034214 /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4170A0FC9B35F363B1E468A /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework */; };
+		8236CF20F506DA1B24329D08 /* Pods_Project_Tiny_Url.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17979DA6DC9101E50845D77C /* Pods_Project_Tiny_Url.framework */; };
+		AB8C8DC87816D0ABA2A42818 /* Pods_Project_Tiny_UrlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697EBC91A5DEB453DF0C91A4 /* Pods_Project_Tiny_UrlTests.framework */; };
 		C552404A269DE7C60050B53D /* ParsingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5524049269DE7C60050B53D /* ParsingService.swift */; };
 		C552404C269E19870050B53D /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552404B269E19870050B53D /* AlertService.swift */; };
 		C5DDD910269DAEE8001EF502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */; };
@@ -38,6 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17979DA6DC9101E50845D77C /* Pods_Project_Tiny_Url.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Tiny_Url.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39BF025F505E7589F518E148 /* Pods-Project Tiny Url.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny Url.debug.xcconfig"; path = "Target Support Files/Pods-Project Tiny Url/Pods-Project Tiny Url.debug.xcconfig"; sourceTree = "<group>"; };
+		61CDD51DFABBB7CB29C6BF2E /* Pods-Project Tiny UrlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny UrlTests.release.xcconfig"; path = "Target Support Files/Pods-Project Tiny UrlTests/Pods-Project Tiny UrlTests.release.xcconfig"; sourceTree = "<group>"; };
+		697EBC91A5DEB453DF0C91A4 /* Pods_Project_Tiny_UrlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Tiny_UrlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7820ED0E0F9F03E9420DEFC7 /* Pods-Project Tiny Url-Project Tiny UrlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny Url-Project Tiny UrlUITests.debug.xcconfig"; path = "Target Support Files/Pods-Project Tiny Url-Project Tiny UrlUITests/Pods-Project Tiny Url-Project Tiny UrlUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ABCD5A5701AA88FCEA4BB8DD /* Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig"; path = "Target Support Files/Pods-Project Tiny Url-Project Tiny UrlUITests/Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B23FFDA6B8BDE318C7D9DBE2 /* Pods-Project Tiny Url.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny Url.release.xcconfig"; path = "Target Support Files/Pods-Project Tiny Url/Pods-Project Tiny Url.release.xcconfig"; sourceTree = "<group>"; };
+		C4170A0FC9B35F363B1E468A /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5524049269DE7C60050B53D /* ParsingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingService.swift; sourceTree = "<group>"; };
 		C552404B269E19870050B53D /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		C5DDD90C269DAEE8001EF502 /* Project Tiny Url.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Tiny Url.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +64,7 @@
 		C5DDD944269DB3DA001EF502 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		C5DDD946269DB406001EF502 /* TinyURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyURL.swift; sourceTree = "<group>"; };
 		C5DDD948269DB9CC001EF502 /* TinyURLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyURLViewModel.swift; sourceTree = "<group>"; };
+		F030EE840FF8BD28C5129C55 /* Pods-Project Tiny UrlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny UrlTests.debug.xcconfig"; path = "Target Support Files/Pods-Project Tiny UrlTests/Pods-Project Tiny UrlTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8236CF20F506DA1B24329D08 /* Pods_Project_Tiny_Url.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8C8DC87816D0ABA2A42818 /* Pods_Project_Tiny_UrlTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,17 +88,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B1952333D181E9DE034214 /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B889FBABCA6DF0343DA9D711 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17979DA6DC9101E50845D77C /* Pods_Project_Tiny_Url.framework */,
+				C4170A0FC9B35F363B1E468A /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework */,
+				697EBC91A5DEB453DF0C91A4 /* Pods_Project_Tiny_UrlTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C5DDD903269DAEE8001EF502 = {
 			isa = PBXGroup;
 			children = (
 				C5DDD90E269DAEE8001EF502 /* Project Tiny Url */,
 				C5DDD90D269DAEE8001EF502 /* Products */,
+				D3D96062E598CFD48D748E02 /* Pods */,
+				B889FBABCA6DF0343DA9D711 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +184,20 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		D3D96062E598CFD48D748E02 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39BF025F505E7589F518E148 /* Pods-Project Tiny Url.debug.xcconfig */,
+				B23FFDA6B8BDE318C7D9DBE2 /* Pods-Project Tiny Url.release.xcconfig */,
+				7820ED0E0F9F03E9420DEFC7 /* Pods-Project Tiny Url-Project Tiny UrlUITests.debug.xcconfig */,
+				ABCD5A5701AA88FCEA4BB8DD /* Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig */,
+				F030EE840FF8BD28C5129C55 /* Pods-Project Tiny UrlTests.debug.xcconfig */,
+				61CDD51DFABBB7CB29C6BF2E /* Pods-Project Tiny UrlTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5DDD936269DAEEA001EF502 /* Build configuration list for PBXNativeTarget "Project Tiny Url" */;
 			buildPhases = (
+				5D60D3E312E8F147A89A3B64 /* [CP] Check Pods Manifest.lock */,
 				C5DDD908269DAEE8001EF502 /* Sources */,
 				C5DDD909269DAEE8001EF502 /* Frameworks */,
 				C5DDD90A269DAEE8001EF502 /* Resources */,
+				115EC26A3A9191EDBACD2D28 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,6 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5DDD939269DAEEA001EF502 /* Build configuration list for PBXNativeTarget "Project Tiny UrlTests" */;
 			buildPhases = (
+				A6B8E0C45B9C4D7AC7AEA5DD /* [CP] Check Pods Manifest.lock */,
 				C5DDD91E269DAEEA001EF502 /* Sources */,
 				C5DDD91F269DAEEA001EF502 /* Frameworks */,
 				C5DDD920269DAEEA001EF502 /* Resources */,
@@ -199,9 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5DDD93C269DAEEA001EF502 /* Build configuration list for PBXNativeTarget "Project Tiny UrlUITests" */;
 			buildPhases = (
+				97E48ECDB2A5FB104BD710AA /* [CP] Check Pods Manifest.lock */,
 				C5DDD929269DAEEA001EF502 /* Sources */,
 				C5DDD92A269DAEEA001EF502 /* Frameworks */,
 				C5DDD92B269DAEEA001EF502 /* Resources */,
+				E54CDDCB53799254028517C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,6 +327,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		115EC26A3A9191EDBACD2D28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project Tiny Url/Pods-Project Tiny Url-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project Tiny Url/Pods-Project Tiny Url-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project Tiny Url/Pods-Project Tiny Url-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D60D3E312E8F147A89A3B64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project Tiny Url-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97E48ECDB2A5FB104BD710AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project Tiny Url-Project Tiny UrlUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6B8E0C45B9C4D7AC7AEA5DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project Tiny UrlTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E54CDDCB53799254028517C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project Tiny Url-Project Tiny UrlUITests/Pods-Project Tiny Url-Project Tiny UrlUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project Tiny Url-Project Tiny UrlUITests/Pods-Project Tiny Url-Project Tiny UrlUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project Tiny Url-Project Tiny UrlUITests/Pods-Project Tiny Url-Project Tiny UrlUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C5DDD908269DAEE8001EF502 /* Sources */ = {
@@ -465,6 +614,7 @@
 		};
 		C5DDD937269DAEEA001EF502 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39BF025F505E7589F518E148 /* Pods-Project Tiny Url.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -484,6 +634,7 @@
 		};
 		C5DDD938269DAEEA001EF502 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B23FFDA6B8BDE318C7D9DBE2 /* Pods-Project Tiny Url.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -503,6 +654,7 @@
 		};
 		C5DDD93A269DAEEA001EF502 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F030EE840FF8BD28C5129C55 /* Pods-Project Tiny UrlTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -525,6 +677,7 @@
 		};
 		C5DDD93B269DAEEA001EF502 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61CDD51DFABBB7CB29C6BF2E /* Pods-Project Tiny UrlTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -547,6 +700,7 @@
 		};
 		C5DDD93D269DAEEA001EF502 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7820ED0E0F9F03E9420DEFC7 /* Pods-Project Tiny Url-Project Tiny UrlUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -567,6 +721,7 @@
 		};
 		C5DDD93E269DAEEA001EF502 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABCD5A5701AA88FCEA4BB8DD /* Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

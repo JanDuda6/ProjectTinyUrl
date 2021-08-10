@@ -1,0 +1,6 @@
+framework module Pods_Project_Tiny_Url_Project_Tiny_UrlUITests {
+  umbrella header "Pods-Project Tiny Url-Project Tiny UrlUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
