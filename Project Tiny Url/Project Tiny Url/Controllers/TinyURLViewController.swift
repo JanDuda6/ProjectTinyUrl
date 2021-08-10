@@ -12,7 +12,7 @@ class TinyURLViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     private let tinyURLVM = TinyURLViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self

@@ -107,7 +107,7 @@
                             <constraint firstItem="ydf-qG-ne5" firstAttribute="top" secondItem="ceA-nC-qF8" secondAttribute="bottom" constant="40" id="EOo-Mg-YlM"/>
                             <constraint firstAttribute="bottom" secondItem="ydf-qG-ne5" secondAttribute="bottom" id="afO-qP-Mjx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ceA-nC-qF8" secondAttribute="trailing" constant="20" id="gDd-8X-YET"/>
-                            <constraint firstItem="ydf-qG-ne5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="y8N-mZ-CAG"/>
+                            <constraint firstItem="ydf-qG-ne5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="y8N-mZ-CAG"/>
                         </constraints>
                     </view>
                     <connections>
