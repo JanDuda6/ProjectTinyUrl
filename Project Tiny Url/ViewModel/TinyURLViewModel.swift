@@ -9,22 +9,15 @@ import Foundation
 
 class TinyURLViewModel {
     private let apiService = ApiService()
-    private var longURL = ""
-    private var tinyURLArray = [TinyURL]()
-
-    func setLongURL(longURL: String) {
-        self.longURL = longURL
-    }
+    private(set) var tinyURLArray = [TinyURL]()
 
     // fetching data from api, saving response and loading old responses
-    func fetchDataFromApi(completion: @escaping () -> Void) {
-        apiService.performPostRequest(longURL: longURL) { [self] tinyURL in
+    func getShortUrl(with longURL: String, completion: @escaping () -> Void) {
+        apiService.requestShortUrl(longURL: longURL) { [weak self] tinyURL in
             // doesn't save result with no shortURL variable
             if tinyURL.shortURL != "" {
-                saveTinyURL(tinyURL: tinyURL)
-                loadTinyURL {
-                    completion()
-                }
+                self?.saveTinyURL(tinyURL: tinyURL)
+                completion()
             }
         }
     }
@@ -46,9 +39,5 @@ class TinyURLViewModel {
             self.tinyURLArray = ParsingService.parseFromJSON(tinyData: tinyData)
         }
         completion()
-    }
-
-    func getTinyURLArray() -> [TinyURL] {
-        return tinyURLArray
     }
 }
