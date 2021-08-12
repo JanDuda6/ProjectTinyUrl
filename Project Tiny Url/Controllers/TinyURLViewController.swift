@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+import RxGesture
+import RxSwift
 
 class TinyURLViewController: UIViewController {
+    private let disposeBag = DisposeBag()
     private let tableView = UITableView()
     private let tinyURLVM = TinyURLViewModel()
 
@@ -48,7 +51,7 @@ class TinyURLViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "URLCell")
-        button.addTarget(self, action: #selector(self.makeItTinyButtonPressed(_:)), for: .touchUpInside)
+        setUpButtonGesture()
         prepareLayout()
         tableView.delegate = self
         tableView.dataSource = self
@@ -60,7 +63,7 @@ class TinyURLViewController: UIViewController {
         }
     }
 
-    @objc func  makeItTinyButtonPressed(_ sender: UIButton) {
+    func  makeItTinyButtonPressed() {
         guard let longURL = textField.text else { return }
         tinyURLVM.getShortUrl(with: longURL) { [self] in
             DispatchQueue.main.async {
@@ -162,10 +165,17 @@ extension TinyURLViewController {
         }
     }
 
+    private func setUpButtonGesture() {
+        button.rx.tapGesture()
+            .when(.recognized)
+            .subscribe(onNext:  { [self] _ in
+                makeItTinyButtonPressed()
+            }).disposed(by: disposeBag)
+    }
+
     private func setUpFont() {
         let font = UIFont.boldSystemFont(ofSize: 20)
         button.titleLabel?.font = font
         label.font = font
     }
 }
-
