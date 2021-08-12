@@ -168,8 +168,8 @@ extension TinyURLViewController {
     private func setUpButtonGesture() {
         button.rx.tapGesture()
             .when(.recognized)
-            .subscribe(onNext:  { [self] _ in
-                makeItTinyButtonPressed()
+            .subscribe(onNext:  { [weak self] _ in
+                self?.makeItTinyButtonPressed()
             }).disposed(by: disposeBag)
     }
 
