@@ -9,8 +9,14 @@ import UIKit
 import SnapKit
 
 class TinyURLViewController: UIViewController {
-    private let tableView = UITableView()
     private let tinyURLVM = TinyURLViewModel()
+
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        return tableView
+    }()
 
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -31,14 +37,14 @@ class TinyURLViewController: UIViewController {
 
     private let label: UILabel = {
         let label = UILabel()
-        label.text = "Enter URL:"
+        label.text = Translations.labelText
         label.textColor = .black
         return label
     }()
 
     private let button: UIButton = {
         let button = UIButton()
-        button.setTitle("Make it Tiny!", for: .normal)
+        button.setTitle(Translations.buttonText, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
         button.backgroundColor = .systemOrange
@@ -138,8 +144,6 @@ extension TinyURLViewController {
     }
 
     private func setUpTableView() {
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
         tableView.snp.makeConstraints {
             $0.leading.trailing.bottom.equalToSuperview()
             $0.top.equalTo(stackView.snp.bottom).offset(40)
