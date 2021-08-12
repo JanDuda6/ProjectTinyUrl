@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,8 @@
 		C5DDD945269DB3DA001EF502 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD944269DB3DA001EF502 /* ApiService.swift */; };
 		C5DDD947269DB406001EF502 /* TinyURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD946269DB406001EF502 /* TinyURL.swift */; };
 		C5DDD949269DB9CC001EF502 /* TinyURLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD948269DB9CC001EF502 /* TinyURLViewModel.swift */; };
+		C5E805A726C50C1900888EFA /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E805A626C50C1900888EFA /* Translations.swift */; };
+		C5E805AC26C50D2F00888EFA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5E805AE26C50D2F00888EFA /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		C5DDD944269DB3DA001EF502 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		C5DDD946269DB406001EF502 /* TinyURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyURL.swift; sourceTree = "<group>"; };
 		C5DDD948269DB9CC001EF502 /* TinyURLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyURLViewModel.swift; sourceTree = "<group>"; };
+		C5E805A626C50C1900888EFA /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
+		C5E805AD26C50D2F00888EFA /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D0EC629ECEA101033E7615C7 /* Pods-Project Tiny Url.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny Url.release.xcconfig"; path = "Target Support Files/Pods-Project Tiny Url/Pods-Project Tiny Url.release.xcconfig"; sourceTree = "<group>"; };
 		DD874E8AE698E64B4FA2373C /* Pods-Project Tiny UrlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny UrlTests.release.xcconfig"; path = "Target Support Files/Pods-Project Tiny UrlTests/Pods-Project Tiny UrlTests.release.xcconfig"; sourceTree = "<group>"; };
 		F8841C4D021702275EA3AA5E /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +109,6 @@
 				690260145F2ED9C71DE3C7F6 /* Pods-Project Tiny UrlTests.debug.xcconfig */,
 				DD874E8AE698E64B4FA2373C /* Pods-Project Tiny UrlTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -151,6 +154,8 @@
 				C5DDD941269DB328001EF502 /* View */,
 				C5DDD918269DAEEA001EF502 /* Assets.xcassets */,
 				C5DDD91D269DAEEA001EF502 /* Info.plist */,
+				C5E805A626C50C1900888EFA /* Translations.swift */,
+				C5E805AE26C50D2F00888EFA /* Localizable.strings */,
 			);
 			path = "Project Tiny Url";
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = C5DDD903269DAEE8001EF502;
 			productRefGroup = C5DDD90D269DAEE8001EF502 /* Products */;
@@ -307,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5DDD91C269DAEEA001EF502 /* LaunchScreen.storyboard in Resources */,
+				C5E805AC26C50D2F00888EFA /* Localizable.strings in Resources */,
 				C5DDD919269DAEEA001EF502 /* Assets.xcassets in Resources */,
 				C5DDD917269DAEE8001EF502 /* Main.storyboard in Resources */,
 			);
@@ -440,6 +447,7 @@
 				C5DDD910269DAEE8001EF502 /* AppDelegate.swift in Sources */,
 				C5DDD947269DB406001EF502 /* TinyURL.swift in Sources */,
 				C5DDD945269DB3DA001EF502 /* ApiService.swift in Sources */,
+				C5E805A726C50C1900888EFA /* Translations.swift in Sources */,
 				C552404A269DE7C60050B53D /* ParsingService.swift in Sources */,
 				C5DDD949269DB9CC001EF502 /* TinyURLViewModel.swift in Sources */,
 				C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */,
@@ -493,6 +501,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		C5E805AE26C50D2F00888EFA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5E805AD26C50D2F00888EFA /* pl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -500,6 +516,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -561,6 +578,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
