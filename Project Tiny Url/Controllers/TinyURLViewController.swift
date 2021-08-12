@@ -62,6 +62,7 @@ class TinyURLViewController: UIViewController {
 
     @objc func  makeItTinyButtonPressed(_ sender: UIButton) {
         guard let longURL = textField.text else { return }
+        print("A")
         tinyURLVM.getShortUrl(with: longURL) { [self] in
             DispatchQueue.main.async {
                 tableView.reloadData()
