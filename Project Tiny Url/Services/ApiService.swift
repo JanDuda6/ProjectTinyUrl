@@ -10,7 +10,7 @@ import Foundation
 class ApiService {
     private let urlSession = URLSession.shared
     
-    func performPostRequest(longURL: String, completion: @escaping (TinyURL) -> Void) {
+    func requestShortUrl(longURL: String, completion: @escaping (TinyURL) -> Void) {
         let endpoint = URL(string: "http://tiny-url.info/api/v1/random")!
         let data = createParameters(longURL: longURL)
         var endpointRequest = URLRequest(url: endpoint)
