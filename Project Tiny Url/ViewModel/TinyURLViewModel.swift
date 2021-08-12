@@ -6,38 +6,39 @@
 //
 
 import Foundation
+import RxSwift
 
 class TinyURLViewModel {
     private let apiService = ApiService()
-    private(set) var tinyURLArray = [TinyURL]()
+    private(set) var urls = BehaviorSubject<[TinyURL]>(value: [])
 
-    // fetching data from api, saving response and loading old responses
-    func getShortUrl(with longURL: String, completion: @escaping () -> Void) {
+    // fetching data from api, saving response
+    func getShortUrl(with longURL: String) {
         apiService.requestShortUrl(longURL: longURL) { [weak self] tinyURL in
             // doesn't save result with no shortURL variable
             if tinyURL.shortURL != "" {
                 self?.saveTinyURL(tinyURL: tinyURL)
-                completion()
             }
         }
     }
 
     // saving response in User Defaults
     private func saveTinyURL(tinyURL: TinyURL) {
+        var tinyURLArray = try! urls.value()
+        tinyURLArray.append(tinyURL)
         var tinyURLDataArray = [Data]()
-        self.tinyURLArray.append(tinyURL)
-        for tinyURL in self.tinyURLArray {
+        for tinyURL in tinyURLArray {
             let tinyURLData = ParsingService.parseToJSON(tinyURL: tinyURL)
             tinyURLDataArray.append(tinyURLData)
         }
+        urls.onNext(tinyURLArray)
         UserDefaults.standard.setValue(tinyURLDataArray, forKey: "tinyData")
     }
 
     // loading response from User Defaults
-    func loadTinyURL(completion: @escaping () -> Void) {
+    func loadTinyURL() {
         if let tinyData = UserDefaults.standard.array(forKey: "tinyData") as? Array<Data> {
-            self.tinyURLArray = ParsingService.parseFromJSON(tinyData: tinyData)
+            urls.onNext(ParsingService.parseFromJSON(tinyData: tinyData))
         }
-        completion()
     }
 }

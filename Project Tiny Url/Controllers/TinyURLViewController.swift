@@ -7,10 +7,13 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 class TinyURLViewController: UIViewController {
     private let tableView = UITableView()
     private let tinyURLVM = TinyURLViewModel()
+    private var disposeBag = DisposeBag()
+    private var tinyUrls = [TinyURL]()
 
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -53,20 +56,25 @@ class TinyURLViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         textField.delegate = self
-        tinyURLVM.loadTinyURL { [self] in
-            DispatchQueue.main.async {
-                tableView.reloadData()
-            }
-        }
+        tinyURLVM.loadTinyURL()
+        bindTableView()
     }
 
     @objc func  makeItTinyButtonPressed(_ sender: UIButton) {
         guard let longURL = textField.text else { return }
-        tinyURLVM.getShortUrl(with: longURL) { [self] in
-            DispatchQueue.main.async {
-                tableView.reloadData()
+        tinyURLVM.getShortUrl(with: longURL)
+        bindTableView()
+    }
+
+    func bindTableView() {
+        tinyURLVM.urls
+            .subscribe { event in
+                self.tinyUrls = event.element ?? [TinyURL]()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
-        }
+            .disposed(by: disposeBag)
     }
 
     // add url to pasteboard
@@ -81,28 +89,27 @@ class TinyURLViewController: UIViewController {
 extension TinyURLViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tinyURLVM.tinyURLArray.count
+        return tinyUrls.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reverseIndexPathRow = reverseIndexPathRow(indexPath: indexPath)
-        let tinyURLArray = tinyURLVM.tinyURLArray
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "URLCell")
         cell.backgroundColor = .clear
-        cell.textLabel?.text = tinyURLArray[reverseIndexPathRow].shortURL
-        cell.detailTextLabel?.text = tinyURLArray[reverseIndexPathRow].longURL
+        cell.textLabel?.text = tinyUrls[reverseIndexPathRow].shortURL
+        cell.detailTextLabel?.text = tinyUrls[reverseIndexPathRow].longURL
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let reverseIndexPathRow = reverseIndexPathRow(indexPath: indexPath)
-        let tinyURLArray = tinyURLVM.tinyURLArray
+        let tinyURLArray = tinyUrls
         addURLToPasteboard(tinyURL: tinyURLArray[reverseIndexPathRow].shortURL)
     }
 
     // reverse index for display new cell at the top
     func reverseIndexPathRow(indexPath: IndexPath) -> Int {
-        let reverseIndexPathRow = tinyURLVM.tinyURLArray.count - 1 - indexPath.row
+        let reverseIndexPathRow = try! tinyURLVM.urls.value().count - 1 - indexPath.row
         return reverseIndexPathRow
     }
 }
