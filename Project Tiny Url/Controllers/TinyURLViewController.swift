@@ -61,6 +61,7 @@ class TinyURLViewController: UIViewController {
                 tableView.reloadData()
             }
         }
+        
     }
 
     func  makeItTinyButtonPressed() {
@@ -76,7 +77,7 @@ class TinyURLViewController: UIViewController {
     func addURLToPasteboard(tinyURL: String) {
         let pasteboard = UIPasteboard.general
         pasteboard.string = tinyURL
-        AlertService.URLCopiedToPasteboardAlert(view: self)
+        setAlert()
     }
 }
 
@@ -165,9 +166,70 @@ extension TinyURLViewController {
         }
     }
 
-    private func setUpButtonGesture() {
-        button.rx.tapGesture()
+    private func setAlert() {
+        let backgroundView: UIView = {
+            let view = UIView()
+            view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+            return view
+        }()
+
+        let alertTitle: UILabel = {
+            let alertTitle = UILabel()
+            alertTitle.text = "Success!!"
+            alertTitle.font = UIFont.boldSystemFont(ofSize: 17)
+            return alertTitle
+        }()
+
+        let alertMessage: UILabel = {
+            let alertMessage = UILabel()
+            alertMessage.text = "Tiny URL copied to clipboard!"
+            alertMessage.font = UIFont.systemFont(ofSize: 13)
+            return alertMessage
+        }()
+
+        let alertDismiss: UILabel = {
+            let alertDismiss = UILabel()
+            alertDismiss.text = "Swipe to dismiss"
+            alertDismiss.font = UIFont.boldSystemFont(ofSize: 13)
+            alertDismiss.textColor = .systemBlue
+            return alertDismiss
+        }()
+
+        let alertStackView: UIStackView = {
+            let alertStackView = UIStackView()
+            alertStackView.layer.cornerRadius = 20
+            alertStackView.backgroundColor = .systemGray5
+            alertStackView.alignment = .center
+            alertStackView.axis = .vertical
+            alertStackView.distribution = .fillProportionally
+            alertStackView.addArrangedSubview(alertTitle)
+            alertStackView.addArrangedSubview(alertMessage)
+            alertStackView.addArrangedSubview(alertDismiss)
+            backgroundView.addSubview(alertStackView)
+            return alertStackView
+        }()
+
+        backgroundView.snp.makeConstraints {
+            self.view.addSubview(backgroundView)
+            $0.bottom.trailing.leading.top.equalToSuperview()
+        }
+
+        alertStackView.snp.makeConstraints {
+            $0.height.equalTo(150)
+            $0.width.equalTo(250)
+            $0.centerY.centerX.equalTo(backgroundView)
+        }
+
+        alertStackView.rx.swipeGesture([.up, .down])
             .when(.recognized)
+            .subscribe(onNext: { _ in
+                alertStackView.removeFromSuperview()
+                backgroundView.removeFromSuperview()
+            }).disposed(by: disposeBag)
+    }
+
+    private func setUpButtonGesture() {
+        button.rx.tap
             .subscribe(onNext:  { [weak self] _ in
                 self?.makeItTinyButtonPressed()
             }).disposed(by: disposeBag)
