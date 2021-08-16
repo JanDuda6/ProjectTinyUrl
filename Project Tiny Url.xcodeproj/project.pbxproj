@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		9E742BC5B69F4D688637BD08 /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8841C4D021702275EA3AA5E /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework */; };
 		C552404A269DE7C60050B53D /* ParsingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5524049269DE7C60050B53D /* ParsingService.swift */; };
 		C552404C269E19870050B53D /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552404B269E19870050B53D /* AlertService.swift */; };
+		C558B9EF26CAA20300B634C8 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C558B9EE26CAA20300B634C8 /* CustomTableViewCell.swift */; };
 		C5DDD910269DAEE8001EF502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */; };
 		C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */; };
 		C5DDD914269DAEE8001EF502 /* TinyURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD913269DAEE8001EF502 /* TinyURLViewController.swift */; };
@@ -48,6 +49,7 @@
 		690260145F2ED9C71DE3C7F6 /* Pods-Project Tiny UrlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny UrlTests.debug.xcconfig"; path = "Target Support Files/Pods-Project Tiny UrlTests/Pods-Project Tiny UrlTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5524049269DE7C60050B53D /* ParsingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingService.swift; sourceTree = "<group>"; };
 		C552404B269E19870050B53D /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		C558B9EE26CAA20300B634C8 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C5DDD90C269DAEE8001EF502 /* Project Tiny Url.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Tiny Url.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,7 +107,6 @@
 				690260145F2ED9C71DE3C7F6 /* Pods-Project Tiny UrlTests.debug.xcconfig */,
 				DD874E8AE698E64B4FA2373C /* Pods-Project Tiny UrlTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -117,6 +118,14 @@
 				F955729D3268BCBA43683657 /* Pods_Project_Tiny_UrlTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C558B9F026CAA8A700B634C8 /* Custom Objects */ = {
+			isa = PBXGroup;
+			children = (
+				C558B9EE26CAA20300B634C8 /* CustomTableViewCell.swift */,
+			);
+			path = "Custom Objects";
 			sourceTree = "<group>";
 		};
 		C5DDD903269DAEE8001EF502 = {
@@ -148,6 +157,7 @@
 				C5DDD93F269DB313001EF502 /* Model */,
 				C5DDD940269DB31E001EF502 /* ViewModel */,
 				C5DDD943269DB373001EF502 /* Controllers */,
+				C558B9F026CAA8A700B634C8 /* Custom Objects */,
 				C5DDD941269DB328001EF502 /* View */,
 				C5DDD918269DAEEA001EF502 /* Assets.xcassets */,
 				C5DDD91D269DAEEA001EF502 /* Info.plist */,
@@ -436,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C558B9EF26CAA20300B634C8 /* CustomTableViewCell.swift in Sources */,
 				C5DDD914269DAEE8001EF502 /* TinyURLViewController.swift in Sources */,
 				C5DDD910269DAEE8001EF502 /* AppDelegate.swift in Sources */,
 				C5DDD947269DB406001EF502 /* TinyURL.swift in Sources */,

@@ -65,10 +65,9 @@ class TinyURLViewController: UIViewController {
     func bindTableView() {
         tableView.delegate = nil
         tableView.dataSource = nil
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "URLCell")
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "URLCell")
     
-        tinyURLVM.urls.bind(to: tableView.rx.items(cellIdentifier: "URLCell", cellType: UITableViewCell.self)) { row, tinyURL, cell in
-            cell.backgroundColor = .clear
+        tinyURLVM.urls.bind(to: tableView.rx.items(cellIdentifier: "URLCell", cellType: CustomTableViewCell.self)) { row, tinyURL, cell in
             cell.textLabel?.text = tinyURL.shortURL
             cell.detailTextLabel?.text = tinyURL.longURL
         }.disposed(by: disposeBag)
