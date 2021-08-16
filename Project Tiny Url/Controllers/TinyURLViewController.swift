@@ -60,19 +60,17 @@ class TinyURLViewController: UIViewController {
     @objc func  makeItTinyButtonPressed(_ sender: UIButton) {
         guard let longURL = textField.text else { return }
         tinyURLVM.getShortUrl(with: longURL)
-        bindTableView()
     }
 
     func bindTableView() {
         tableView.delegate = nil
         tableView.dataSource = nil
-
-        tinyURLVM.urls.bind(to: tableView.rx.items) { tableView, index, tinyURL in
-            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "URLCell")
+    
+        tinyURLVM.urls.bind(to: tableView.rx.items(cellIdentifier: "URLCell", cellType: UITableViewCell.self)) { row, tinyURL, cell in
             cell.backgroundColor = .clear
             cell.textLabel?.text = tinyURL.shortURL
             cell.detailTextLabel?.text = tinyURL.longURL
-            return cell
         }.disposed(by: disposeBag)
 
         tableView.rx.modelSelected(TinyURL.self).subscribe(onNext: { [weak self] tinyUrl in
