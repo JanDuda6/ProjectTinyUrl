@@ -205,12 +205,13 @@ extension TinyURLViewController {
             alertStackView.addArrangedSubview(alertTitle)
             alertStackView.addArrangedSubview(alertMessage)
             alertStackView.addArrangedSubview(alertDismiss)
-            backgroundView.addSubview(alertStackView)
             return alertStackView
         }()
 
+        backgroundView.addSubview(alertStackView)
+        self.view.addSubview(backgroundView)
+
         backgroundView.snp.makeConstraints {
-            self.view.addSubview(backgroundView)
             $0.bottom.trailing.leading.top.equalToSuperview()
         }
 
@@ -219,11 +220,9 @@ extension TinyURLViewController {
             $0.width.equalTo(250)
             $0.centerY.centerX.equalTo(backgroundView)
         }
-
         alertStackView.rx.swipeGesture([.up, .down])
             .when(.recognized)
             .subscribe(onNext: { _ in
-                alertStackView.removeFromSuperview()
                 backgroundView.removeFromSuperview()
             }).disposed(by: disposeBag)
     }
