@@ -27,16 +27,14 @@ class TinyURLViewModel {
         var tinyURLArray = try! urls.value()
         tinyURLArray.append(tinyURL)
         tinyURLArray.reverse()
-        let tinyURLDataArray = tinyURLArray.map { tinyURL in
-            ParsingService.parseToJSON(tinyURL: tinyURL)
-        }
+        let tinyURLDataArray = tinyURLArray.map(ParsingService.parseToJSON(tinyURL:))
         urls.onNext(tinyURLArray)
-        UserDefaults.standard.setValue(tinyURLDataArray, forKey: "tinyData")
+        UserDefaults.standard.setValue(tinyURLDataArray, forKey: EnumUserDefaults.tinyData.rawValue)
     }
     
     // loading response from User Defaults
     func loadTinyURL() {
-        if let tinyData = UserDefaults.standard.array(forKey: "tinyData") as? Array<Data> {
+        if let tinyData = UserDefaults.standard.array(forKey: EnumUserDefaults.tinyData.rawValue) as? Array<Data> {
             urls.onNext(ParsingService.parseFromJSON(tinyData: tinyData))
         }
     }

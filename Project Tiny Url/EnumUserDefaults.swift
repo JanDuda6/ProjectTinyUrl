@@ -7,4 +7,6 @@
 
 import Foundation
 
-enum
+enum EnumUserDefaults: String {
+    case tinyData = "tinyData"
+}

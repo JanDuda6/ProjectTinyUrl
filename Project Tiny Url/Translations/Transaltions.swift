@@ -13,4 +13,5 @@ class Translations {
     static let alertTitle = NSLocalizedString("Success!", comment: "")
     static let alertMessage = NSLocalizedString("Tiny URL copied to clipboard!", comment: "")
     static let alertDismiss = NSLocalizedString("Swipe to dismiss", comment: "")
+    static let alertWrongURL = NSLocalizedString("URL syntax invalid", comment: "")
 }
