@@ -7,12 +7,12 @@
 
 import UIKit
 import SnapKit
+import RxGesture
 import RxSwift
-import RxCocoa
 
 class TinyURLViewController: UIViewController {
+    private let disposeBag = DisposeBag()
     private let tinyURLVM = TinyURLViewModel()
-    private var disposeBag = DisposeBag()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -56,14 +56,14 @@ class TinyURLViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        button.addTarget(self, action: #selector(self.makeItTinyButtonPressed(_:)), for: .touchUpInside)
+        setUpButtonGesture()
         prepareLayout()
         textField.delegate = self
         bindTableView()
         tinyURLVM.loadTinyURL()
     }
 
-    @objc func  makeItTinyButtonPressed(_ sender: UIButton) {
+    func  makeItTinyButtonPressed() {
         guard let longURL = textField.text else { return }
         tinyURLVM.getShortUrl(with: longURL)
     }
@@ -87,7 +87,7 @@ class TinyURLViewController: UIViewController {
     func addURLToPasteboard(tinyURL: String) {
         let pasteboard = UIPasteboard.general
         pasteboard.string = tinyURL
-        AlertService.URLCopiedToPasteboardAlert(view: self)
+        setAlert()
     }
 }
 
@@ -144,10 +144,77 @@ extension TinyURLViewController {
         }
     }
 
+    private func setAlert() {
+        let backgroundView: UIView = {
+            let view = UIView()
+            view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+            return view
+        }()
+
+        let alertTitle: UILabel = {
+            let alertTitle = UILabel()
+            alertTitle.text = "Success!!"
+            alertTitle.font = UIFont.boldSystemFont(ofSize: 17)
+            return alertTitle
+        }()
+
+        let alertMessage: UILabel = {
+            let alertMessage = UILabel()
+            alertMessage.text = "Tiny URL copied to clipboard!"
+            alertMessage.font = UIFont.systemFont(ofSize: 13)
+            return alertMessage
+        }()
+
+        let alertDismiss: UILabel = {
+            let alertDismiss = UILabel()
+            alertDismiss.text = "Swipe to dismiss"
+            alertDismiss.font = UIFont.boldSystemFont(ofSize: 13)
+            alertDismiss.textColor = .systemBlue
+            return alertDismiss
+        }()
+
+        let alertStackView: UIStackView = {
+            let alertStackView = UIStackView()
+            alertStackView.layer.cornerRadius = 20
+            alertStackView.backgroundColor = .systemGray5
+            alertStackView.alignment = .center
+            alertStackView.axis = .vertical
+            alertStackView.distribution = .fillProportionally
+            alertStackView.addArrangedSubview(alertTitle)
+            alertStackView.addArrangedSubview(alertMessage)
+            alertStackView.addArrangedSubview(alertDismiss)
+            return alertStackView
+        }()
+
+        backgroundView.addSubview(alertStackView)
+        self.view.addSubview(backgroundView)
+
+        backgroundView.snp.makeConstraints {
+            $0.bottom.trailing.leading.top.equalToSuperview()
+        }
+
+        alertStackView.snp.makeConstraints {
+            $0.height.equalTo(150)
+            $0.width.equalTo(250)
+            $0.centerY.centerX.equalTo(backgroundView)
+        }
+        alertStackView.rx.swipeGesture([.up, .down])
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                backgroundView.removeFromSuperview()
+            }).disposed(by: disposeBag)
+    }
+
+    private func setUpButtonGesture() {
+        button.rx.tap
+            .subscribe(onNext:  { [weak self] _ in
+                self?.makeItTinyButtonPressed()
+            }).disposed(by: disposeBag)
+    }
+
     private func setUpFont() {
         let font = UIFont.boldSystemFont(ofSize: 20)
         button.titleLabel?.font = font
         label.font = font
     }
 }
-

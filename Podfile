@@ -9,6 +9,7 @@ target 'Project Tiny Url' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
+  pod "RxGesture"
 
   target 'Project Tiny UrlTests' do
     inherit! :search_paths
