@@ -12,4 +12,5 @@ class Translations {
     static let buttonText = NSLocalizedString("Make it Tiny!", comment: "")
     static let alertTitle = NSLocalizedString("Success!", comment: "")
     static let alertMessage = NSLocalizedString("Tiny URL copied to clipboard!", comment: "")
+    static let alertDismiss = NSLocalizedString("Swipe to dismiss", comment: "")
 }
