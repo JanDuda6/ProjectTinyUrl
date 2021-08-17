@@ -11,7 +11,8 @@ import RxSwift
 class TinyURLViewModel {
     private let apiService = ApiService()
     private(set) var urls = BehaviorSubject<[TinyURL]>(value: [])
-    
+    private(set) var urlIsInArray = PublishSubject<Bool>()
+
     // fetching data from api, saving response
     func getShortUrl(with longURL: String) {
         apiService.requestShortUrl(longURL: longURL) { [weak self] tinyURL in
@@ -23,8 +24,12 @@ class TinyURLViewModel {
     }
     
     // saving response in User Defaults
-    func saveTinyURL(tinyURL: TinyURL) {
+   private func saveTinyURL(tinyURL: TinyURL) {
         var tinyURLArray = try! urls.value()
+        if tinyURLArray.contains(where: { $0.shortURL.lowercased() == tinyURL.shortURL.lowercased() }) {
+            urlIsInArray.onNext(true)
+            return
+        }
         tinyURLArray.append(tinyURL)
         tinyURLArray.reverse()
         let tinyURLDataArray = tinyURLArray.map(ParsingService.parseToJSON(tinyURL:))

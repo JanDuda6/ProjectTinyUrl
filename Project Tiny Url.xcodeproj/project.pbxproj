@@ -133,6 +133,14 @@
 			path = Translations;
 			sourceTree = "<group>";
 		};
+		C5205F7F26CBF75D00E9CD73 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				C5205F7A26CBC9F100E9CD73 /* EnumUserDefaults.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		C558B9F026CAA8A700B634C8 /* Custom Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,8 +180,8 @@
 				C5DDD943269DB373001EF502 /* Controllers */,
 				C558B9F026CAA8A700B634C8 /* Custom Objects */,
 				C5DDD941269DB328001EF502 /* View */,
+				C5205F7F26CBF75D00E9CD73 /* Enums */,
 				C5205F7C26CBC9FA00E9CD73 /* Translations */,
-				C5205F7A26CBC9F100E9CD73 /* EnumUserDefaults.swift */,
 				C5DDD918269DAEEA001EF502 /* Assets.xcassets */,
 				C5DDD91D269DAEEA001EF502 /* Info.plist */,
 			);

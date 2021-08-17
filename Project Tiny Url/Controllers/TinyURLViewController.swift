@@ -45,9 +45,8 @@ class TinyURLViewController: UIViewController {
         return label
     }()
 
-    private let wrongURLLabel: UILabel = {
+    private let alertLabel: UILabel = {
         let label = UILabel()
-        label.text = Translations.alertWrongURL
         label.textColor = .red
         label.font = UIFont.systemFont(ofSize: 10)
         label.isHidden = true
@@ -70,21 +69,16 @@ class TinyURLViewController: UIViewController {
         textField.delegate = self
         bindTableView()
         tinyURLVM.loadTinyURL()
+        bindAlertLabel()
     }
 
-    func  makeItTinyButtonPressed() {
+    private  func  makeItTinyButtonPressed() {
         guard let longURL = textField.text else { return }
         longURLValidation(longURL: longURL)
         tinyURLVM.getShortUrl(with: longURL)
     }
 
-    func longURLValidation(longURL: String) {
-        let regex = "(?i)https?://(?:www\\.)?\\S+(?:/|\\b)"
-        let longURLPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
-        wrongURLLabel.isHidden = longURLPredicate.evaluate(with: longURL)
-    }
-
-    func bindTableView() {
+    private  func bindTableView() {
         tableView.delegate = nil
         tableView.dataSource = nil
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "URLCell")
@@ -99,11 +93,29 @@ class TinyURLViewController: UIViewController {
         }).disposed(by: disposeBag)
     }
 
+    private  func longURLValidation(longURL: String) {
+        let regex = "(?i)https?://(?:www\\.)?\\S+(?:/|\\b)"
+        let longURLPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        alertLabel.text = Translations.alertWrongURL
+        alertLabel.isHidden = longURLPredicate.evaluate(with: longURL)
+    }
+
     // add url to pasteboard
-    func addURLToPasteboard(tinyURL: String) {
+    private  func addURLToPasteboard(tinyURL: String) {
         let pasteboard = UIPasteboard.general
         pasteboard.string = tinyURL
         setAlert()
+    }
+
+    private func bindAlertLabel() {
+        tinyURLVM.urlIsInArray
+            .subscribe(onNext: { [weak self]_ in
+                DispatchQueue.main.async {
+                    self?.alertLabel.text = Translations.alertDoneIt
+                    self?.alertLabel.isHidden = false
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -148,7 +160,7 @@ extension TinyURLViewController {
         stack.spacing = 0
         stack.axis = .vertical
         stack.addArrangedSubview(textField)
-        stack.addArrangedSubview(wrongURLLabel)
+        stack.addArrangedSubview(alertLabel)
         stackView.addArrangedSubview(stack)
         textField.snp.makeConstraints {
             $0.height.equalTo(50)
@@ -236,7 +248,7 @@ extension TinyURLViewController {
             }).disposed(by: disposeBag)
 
     }
-
+    
     private func setUpButtonGesture() {
         button.rx.tap
             .subscribe(onNext:  { [weak self] _ in
