@@ -12,6 +12,7 @@
 		9E742BC5B69F4D688637BD08 /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8841C4D021702275EA3AA5E /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework */; };
         C558B9EF26CAA20300B634C8 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C558B9EE26CAA20300B634C8 /* CustomTableViewCell.swift */; };
 		C552404A269DE7C60050B53D /* ParsingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5524049269DE7C60050B53D /* ParsingService.swift */; };
+		C558B9EF26CAA20300B634C8 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C558B9EE26CAA20300B634C8 /* CustomTableViewCell.swift */; };
 		C5DDD910269DAEE8001EF502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */; };
 		C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */; };
 		C5DDD914269DAEE8001EF502 /* TinyURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD913269DAEE8001EF502 /* TinyURLViewController.swift */; };
@@ -49,7 +50,7 @@
 		41EE9B6A2C76B76189DC2855 /* Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig"; path = "Target Support Files/Pods-Project Tiny Url-Project Tiny UrlUITests/Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig"; sourceTree = "<group>"; };
 		690260145F2ED9C71DE3C7F6 /* Pods-Project Tiny UrlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny UrlTests.debug.xcconfig"; path = "Target Support Files/Pods-Project Tiny UrlTests/Pods-Project Tiny UrlTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5524049269DE7C60050B53D /* ParsingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingService.swift; sourceTree = "<group>"; };
-        C558B9EE26CAA20300B634C8 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		C558B9EE26CAA20300B634C8 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C5DDD90C269DAEE8001EF502 /* Project Tiny Url.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Tiny Url.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -459,7 +460,7 @@
 				C552404A269DE7C60050B53D /* ParsingService.swift in Sources */,
 				C5DDD949269DB9CC001EF502 /* TinyURLViewModel.swift in Sources */,
 				C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */,
-                C5F2460426C517E50025F13C /* Transaltions.swift in Sources */,
+				C5F2460426C517E50025F13C /* Transaltions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
