@@ -53,8 +53,8 @@ class TinyURLViewController: UIViewController {
         button.addTarget(self, action: #selector(self.makeItTinyButtonPressed(_:)), for: .touchUpInside)
         prepareLayout()
         textField.delegate = self
-        tinyURLVM.loadTinyURL()
         bindTableView()
+        tinyURLVM.loadTinyURL()
     }
 
     @objc func  makeItTinyButtonPressed(_ sender: UIButton) {

@@ -26,12 +26,10 @@ class TinyURLViewModel {
     func saveTinyURL(tinyURL: TinyURL) {
         var tinyURLArray = try! urls.value()
         tinyURLArray.append(tinyURL)
-        var tinyURLDataArray = [Data]()
         tinyURLArray.reverse()
-        tinyURLArray.forEach({ tinyURL in
-            let tinyURLData = ParsingService.parseToJSON(tinyURL: tinyURL)
-            tinyURLDataArray.append(tinyURLData)
-        })
+        let tinyURLDataArray = tinyURLArray.map { tinyURL in
+            ParsingService.parseToJSON(tinyURL: tinyURL)
+        }
         urls.onNext(tinyURLArray)
         UserDefaults.standard.setValue(tinyURLDataArray, forKey: "tinyData")
     }
