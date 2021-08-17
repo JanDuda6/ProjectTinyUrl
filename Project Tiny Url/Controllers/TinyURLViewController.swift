@@ -7,9 +7,12 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class TinyURLViewController: UIViewController {
     private let tinyURLVM = TinyURLViewModel()
+    private var disposeBag = DisposeBag()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -53,26 +56,31 @@ class TinyURLViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "URLCell")
         button.addTarget(self, action: #selector(self.makeItTinyButtonPressed(_:)), for: .touchUpInside)
         prepareLayout()
-        tableView.delegate = self
-        tableView.dataSource = self
         textField.delegate = self
-        tinyURLVM.loadTinyURL { [self] in
-            DispatchQueue.main.async {
-                tableView.reloadData()
-            }
-        }
+        bindTableView()
+        tinyURLVM.loadTinyURL()
     }
 
     @objc func  makeItTinyButtonPressed(_ sender: UIButton) {
         guard let longURL = textField.text else { return }
-        tinyURLVM.getShortUrl(with: longURL) { [self] in
-            DispatchQueue.main.async {
-                tableView.reloadData()
-            }
-        }
+        tinyURLVM.getShortUrl(with: longURL)
+    }
+
+    func bindTableView() {
+        tableView.delegate = nil
+        tableView.dataSource = nil
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "URLCell")
+    
+        tinyURLVM.urls.bind(to: tableView.rx.items(cellIdentifier: "URLCell", cellType: CustomTableViewCell.self)) { row, tinyURL, cell in
+            cell.textLabel?.text = tinyURL.shortURL
+            cell.detailTextLabel?.text = tinyURL.longURL
+        }.disposed(by: disposeBag)
+
+        tableView.rx.modelSelected(TinyURL.self).subscribe(onNext: { [weak self] tinyUrl in
+            self?.addURLToPasteboard(tinyURL: tinyUrl.shortURL)
+        }).disposed(by: disposeBag)
     }
 
     // add url to pasteboard
@@ -80,36 +88,6 @@ class TinyURLViewController: UIViewController {
         let pasteboard = UIPasteboard.general
         pasteboard.string = tinyURL
         AlertService.URLCopiedToPasteboardAlert(view: self)
-    }
-}
-
-//MARK: - Table View Delegate
-extension TinyURLViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tinyURLVM.tinyURLArray.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reverseIndexPathRow = reverseIndexPathRow(indexPath: indexPath)
-        let tinyURLArray = tinyURLVM.tinyURLArray
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "URLCell")
-        cell.backgroundColor = .clear
-        cell.textLabel?.text = tinyURLArray[reverseIndexPathRow].shortURL
-        cell.detailTextLabel?.text = tinyURLArray[reverseIndexPathRow].longURL
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let reverseIndexPathRow = reverseIndexPathRow(indexPath: indexPath)
-        let tinyURLArray = tinyURLVM.tinyURLArray
-        addURLToPasteboard(tinyURL: tinyURLArray[reverseIndexPathRow].shortURL)
-    }
-
-    // reverse index for display new cell at the top
-    func reverseIndexPathRow(indexPath: IndexPath) -> Int {
-        let reverseIndexPathRow = tinyURLVM.tinyURLArray.count - 1 - indexPath.row
-        return reverseIndexPathRow
     }
 }
 
