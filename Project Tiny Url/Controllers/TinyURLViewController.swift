@@ -11,7 +11,6 @@ import RxGesture
 import RxSwift
 
 class TinyURLViewController: UIViewController {
-    private let tableView = UITableView()
     private let tinyURLVM = TinyURLViewModel()
     private var disposeBag = DisposeBag()
 
