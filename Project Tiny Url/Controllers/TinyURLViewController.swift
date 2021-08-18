@@ -69,13 +69,32 @@ class TinyURLViewController: UIViewController {
         textField.delegate = self
         bindTableView()
         tinyURLVM.loadTinyURL()
-        bindAlertLabel()
     }
 
     private  func  makeItTinyButtonPressed() {
         guard let longURL = textField.text else { return }
-        longURLValidation(longURL: longURL)
-        tinyURLVM.getShortUrl(with: longURL)
+        tinyURLVM.getShortUrl(with: longURL, completion: { [weak self] response in
+            self?.fillAlertLabel(response: response)
+        })
+    }
+
+    private func fillAlertLabel(response: EnumValidation) {
+        switch response {
+        case .alreadyDefined:
+            DispatchQueue.main.async {
+                self.alertLabel.text = Translations.alertDoneIt
+                self.alertLabel.isHidden = false
+            }
+        case .validationFailed:
+            DispatchQueue.main.async {
+                self.alertLabel.text = Translations.alertWrongURL
+                self.alertLabel.isHidden = false
+            }
+        default:
+            DispatchQueue.main.async {
+                self.alertLabel.isHidden = true
+            }
+        }
     }
 
     private  func bindTableView() {
@@ -93,29 +112,11 @@ class TinyURLViewController: UIViewController {
         }).disposed(by: disposeBag)
     }
 
-    private  func longURLValidation(longURL: String) {
-        let regex = "(?i)https?://(?:www\\.)?\\S+(?:/|\\b)"
-        let longURLPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
-        alertLabel.text = Translations.alertWrongURL
-        alertLabel.isHidden = longURLPredicate.evaluate(with: longURL)
-    }
-
     // add url to pasteboard
     private  func addURLToPasteboard(tinyURL: String) {
         let pasteboard = UIPasteboard.general
         pasteboard.string = tinyURL
         setAlert()
-    }
-
-    private func bindAlertLabel() {
-        tinyURLVM.urlIsInArray
-            .subscribe(onNext: { [weak self]_ in
-                DispatchQueue.main.async {
-                    self?.alertLabel.text = Translations.alertDoneIt
-                    self?.alertLabel.isHidden = false
-                }
-            })
-            .disposed(by: disposeBag)
     }
 }
 
