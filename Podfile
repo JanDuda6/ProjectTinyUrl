@@ -10,6 +10,7 @@ target 'Project Tiny Url' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod "RxGesture"
+  pod 'Alamofire', '~> 5.2'
 
   target 'Project Tiny UrlTests' do
     inherit! :search_paths
