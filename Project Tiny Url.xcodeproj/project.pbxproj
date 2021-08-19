@@ -10,7 +10,8 @@
 		24EE2FB901F601A9F9291273 /* Pods_Project_Tiny_UrlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F955729D3268BCBA43683657 /* Pods_Project_Tiny_UrlTests.framework */; };
 		42EA4C9786C1A494425DB6C1 /* Pods_Project_Tiny_Url.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BB4EB912749C1DD3A73405 /* Pods_Project_Tiny_Url.framework */; };
 		9E742BC5B69F4D688637BD08 /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8841C4D021702275EA3AA5E /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework */; };
-        C558B9EF26CAA20300B634C8 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C558B9EE26CAA20300B634C8 /* CustomTableViewCell.swift */; };
+		C5205F7B26CBC9F100E9CD73 /* EnumUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5205F7A26CBC9F100E9CD73 /* EnumUserDefaults.swift */; };
+		C5205F8126CCF7B800E9CD73 /* EnumValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5205F8026CCF7B800E9CD73 /* EnumValidation.swift */; };
 		C552404A269DE7C60050B53D /* ParsingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5524049269DE7C60050B53D /* ParsingService.swift */; };
 		C558B9EF26CAA20300B634C8 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C558B9EE26CAA20300B634C8 /* CustomTableViewCell.swift */; };
 		C5DDD910269DAEE8001EF502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */; };
@@ -49,6 +50,8 @@
 		351433DC35419752031EF50D /* Pods-Project Tiny Url-Project Tiny UrlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny Url-Project Tiny UrlUITests.debug.xcconfig"; path = "Target Support Files/Pods-Project Tiny Url-Project Tiny UrlUITests/Pods-Project Tiny Url-Project Tiny UrlUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		41EE9B6A2C76B76189DC2855 /* Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig"; path = "Target Support Files/Pods-Project Tiny Url-Project Tiny UrlUITests/Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig"; sourceTree = "<group>"; };
 		690260145F2ED9C71DE3C7F6 /* Pods-Project Tiny UrlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Tiny UrlTests.debug.xcconfig"; path = "Target Support Files/Pods-Project Tiny UrlTests/Pods-Project Tiny UrlTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C5205F7A26CBC9F100E9CD73 /* EnumUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumUserDefaults.swift; sourceTree = "<group>"; };
+		C5205F8026CCF7B800E9CD73 /* EnumValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumValidation.swift; sourceTree = "<group>"; };
 		C5524049269DE7C60050B53D /* ParsingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingService.swift; sourceTree = "<group>"; };
 		C558B9EE26CAA20300B634C8 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C5DDD90C269DAEE8001EF502 /* Project Tiny Url.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Tiny Url.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +126,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C5205F7C26CBC9FA00E9CD73 /* Translations */ = {
+			isa = PBXGroup;
+			children = (
+				C5F2460326C517E50025F13C /* Transaltions.swift */,
+				C5F2460226C517BD0025F13C /* Localizable.strings */,
+			);
+			path = Translations;
+			sourceTree = "<group>";
+		};
+		C5205F7F26CBF75D00E9CD73 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				C5205F7A26CBC9F100E9CD73 /* EnumUserDefaults.swift */,
+				C5205F8026CCF7B800E9CD73 /* EnumValidation.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		C558B9F026CAA8A700B634C8 /* Custom Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,10 +183,10 @@
 				C5DDD943269DB373001EF502 /* Controllers */,
 				C558B9F026CAA8A700B634C8 /* Custom Objects */,
 				C5DDD941269DB328001EF502 /* View */,
+				C5205F7F26CBF75D00E9CD73 /* Enums */,
+				C5205F7C26CBC9FA00E9CD73 /* Translations */,
 				C5DDD918269DAEEA001EF502 /* Assets.xcassets */,
 				C5DDD91D269DAEEA001EF502 /* Info.plist */,
-				C5F2460326C517E50025F13C /* Transaltions.swift */,
-				C5F2460226C517BD0025F13C /* Localizable.strings */,
 			);
 			path = "Project Tiny Url";
 			sourceTree = "<group>";
@@ -459,8 +480,10 @@
 				C5DDD945269DB3DA001EF502 /* ApiService.swift in Sources */,
 				C552404A269DE7C60050B53D /* ParsingService.swift in Sources */,
 				C5DDD949269DB9CC001EF502 /* TinyURLViewModel.swift in Sources */,
+				C5205F8126CCF7B800E9CD73 /* EnumValidation.swift in Sources */,
 				C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */,
 				C5F2460426C517E50025F13C /* Transaltions.swift in Sources */,
+				C5205F7B26CBC9F100E9CD73 /* EnumUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

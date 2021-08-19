@@ -38,10 +38,18 @@ class TinyURLViewController: UIViewController {
         return textField
     }()
 
-    private let label: UILabel = {
+    private let enterURLLabel: UILabel = {
         let label = UILabel()
         label.text = Translations.labelText
         label.textColor = .black
+        return label
+    }()
+
+    private let alertLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .red
+        label.font = UIFont.systemFont(ofSize: 10)
+        label.isHidden = true
         return label
     }()
 
@@ -63,16 +71,37 @@ class TinyURLViewController: UIViewController {
         tinyURLVM.loadTinyURL()
     }
 
-    func  makeItTinyButtonPressed() {
+    private  func  makeItTinyButtonPressed() {
         guard let longURL = textField.text else { return }
-        tinyURLVM.getShortUrl(with: longURL)
+        tinyURLVM.getShortUrl(with: longURL, completion: { [weak self] response in
+            self?.fillAlertLabel(response: response)
+        })
     }
 
-    func bindTableView() {
+    private func fillAlertLabel(response: EnumValidation) {
+        switch response {
+        case .alreadyDefined:
+            DispatchQueue.main.async {
+                self.alertLabel.text = Translations.alertDoneIt
+                self.alertLabel.isHidden = false
+            }
+        case .validationFailed:
+            DispatchQueue.main.async {
+                self.alertLabel.text = Translations.alertWrongURL
+                self.alertLabel.isHidden = false
+            }
+        default:
+            DispatchQueue.main.async {
+                self.alertLabel.isHidden = true
+            }
+        }
+    }
+
+    private  func bindTableView() {
         tableView.delegate = nil
         tableView.dataSource = nil
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "URLCell")
-    
+
         tinyURLVM.urls.bind(to: tableView.rx.items(cellIdentifier: "URLCell", cellType: CustomTableViewCell.self)) { row, tinyURL, cell in
             cell.textLabel?.text = tinyURL.shortURL
             cell.detailTextLabel?.text = tinyURL.longURL
@@ -84,7 +113,7 @@ class TinyURLViewController: UIViewController {
     }
 
     // add url to pasteboard
-    func addURLToPasteboard(tinyURL: String) {
+    private  func addURLToPasteboard(tinyURL: String) {
         let pasteboard = UIPasteboard.general
         pasteboard.string = tinyURL
         setAlert()
@@ -111,9 +140,7 @@ extension TinyURLViewController {
     }
 
     private func setUpStackView() {
-        stackView.addArrangedSubview(label)
-        stackView.addArrangedSubview(textField)
-        stackView.addArrangedSubview(button)
+        stackView.addArrangedSubview(enterURLLabel)
         stackView.snp.makeConstraints {
             $0.top.equalTo(self.view).offset(100)
             $0.leading.equalTo(self.view).offset(20)
@@ -129,6 +156,13 @@ extension TinyURLViewController {
     }
 
     private func setUpTextField() {
+        let stack = UIStackView()
+        stack.alignment = .leading
+        stack.spacing = 0
+        stack.axis = .vertical
+        stack.addArrangedSubview(textField)
+        stack.addArrangedSubview(alertLabel)
+        stackView.addArrangedSubview(stack)
         textField.snp.makeConstraints {
             $0.height.equalTo(50)
             $0.leading.equalTo(self.stackView).offset(30)
@@ -137,6 +171,7 @@ extension TinyURLViewController {
     }
 
     private func setUpButton() {
+        stackView.addArrangedSubview(button)
         button.snp.makeConstraints {
             $0.height.equalTo(50)
             $0.leading.equalTo(self.stackView).offset(60)
@@ -153,21 +188,21 @@ extension TinyURLViewController {
 
         let alertTitle: UILabel = {
             let alertTitle = UILabel()
-            alertTitle.text = "Success!!"
+            alertTitle.text = Translations.alertTitle
             alertTitle.font = UIFont.boldSystemFont(ofSize: 17)
             return alertTitle
         }()
 
         let alertMessage: UILabel = {
             let alertMessage = UILabel()
-            alertMessage.text = "Tiny URL copied to clipboard!"
+            alertMessage.text = Translations.alertMessage
             alertMessage.font = UIFont.systemFont(ofSize: 13)
             return alertMessage
         }()
 
         let alertDismiss: UILabel = {
             let alertDismiss = UILabel()
-            alertDismiss.text = "Swipe to dismiss"
+            alertDismiss.text = Translations.alertDismiss
             alertDismiss.font = UIFont.boldSystemFont(ofSize: 13)
             alertDismiss.textColor = .systemBlue
             return alertDismiss
@@ -198,13 +233,23 @@ extension TinyURLViewController {
             $0.width.equalTo(250)
             $0.centerY.centerX.equalTo(backgroundView)
         }
-        alertStackView.rx.swipeGesture([.up, .down])
+
+        alertStackView.rx
+            .anyGesture(.tap(), .swipe(direction: .down), .swipe(direction: .up))
             .when(.recognized)
             .subscribe(onNext: { _ in
                 backgroundView.removeFromSuperview()
             }).disposed(by: disposeBag)
-    }
 
+        backgroundView.rx
+            .anyGesture(.tap(), .swipe(direction: .down), .swipe(direction: .up))
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                backgroundView.removeFromSuperview()
+            }).disposed(by: disposeBag)
+
+    }
+    
     private func setUpButtonGesture() {
         button.rx.tap
             .subscribe(onNext:  { [weak self] _ in
@@ -215,6 +260,6 @@ extension TinyURLViewController {
     private func setUpFont() {
         let font = UIFont.boldSystemFont(ofSize: 20)
         button.titleLabel?.font = font
-        label.font = font
+        enterURLLabel.font = font
     }
 }
