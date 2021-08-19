@@ -35,8 +35,7 @@ class TinyURLViewModel {
         if tinyURLArray.contains(where: { $0.longURL.lowercased() == tinyURL.longURL.lowercased() }) {
             return .alreadyDefined
         }
-        tinyURLArray.append(tinyURL)
-        tinyURLArray.reverse()
+        tinyURLArray.insert(tinyURL, at: 0)
         let tinyURLDataArray = tinyURLArray.map(ParsingService.parseToJSON(tinyURL:))
         urls.onNext(tinyURLArray)
         UserDefaults.standard.setValue(tinyURLDataArray, forKey: EnumUserDefaults.tinyData.rawValue)
