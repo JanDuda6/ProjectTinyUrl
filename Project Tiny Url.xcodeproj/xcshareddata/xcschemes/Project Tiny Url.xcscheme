@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5DDD92C269DAEEA001EF502"
+               BlueprintIdentifier = "C59024B826E20FD1000A8227"
                BuildableName = "Project Tiny UrlUITests.xctest"
                BlueprintName = "Project Tiny UrlUITests"
                ReferencedContainer = "container:Project Tiny Url.xcodeproj">
@@ -54,7 +54,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = "pl"
+      language = "en"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
