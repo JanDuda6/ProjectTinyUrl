@@ -45,28 +45,92 @@ class TestsTinyURLViewModel: XCTestCase {
     }
 
     func testGetShortUrlValidation() {
+        let correctUrl = "https://foo.pl"
         let wwwUrl = "www.foo.pl"
         let urlWithoutSuffix = "https://foo."
         let onlyHostUrl = "foo.pl"
-        let incorrectUrl = "httsp//:ww.foo.pl"
+        let expectation = XCTestExpectation(description: "callback")
+        var callbackResult: EnumValidation!
 
-        sut.getShortUrl(with: wwwUrl, completion: { XCTAssertEqual($0, .validationFailed)})
-        sut.getShortUrl(with: urlWithoutSuffix, completion: { XCTAssertEqual($0, .validationFailed)})
-        sut.getShortUrl(with: onlyHostUrl, completion: { XCTAssertEqual($0, .validationFailed)})
-        sut.getShortUrl(with: incorrectUrl, completion: { XCTAssertEqual($0, .validationFailed)})
+        sut.getShortUrl(with: wwwUrl) { result in
+            callbackResult = result
+            expectation.fulfill()
+        }
+
+        XCTAssertEqual(callbackResult, .validationFailed)
+
+        sut.getShortUrl(with: correctUrl) { result in
+            callbackResult = result
+            expectation.fulfill()
+        }
+
+        XCTAssertEqual(callbackResult, .isValid)
+
+        sut.getShortUrl(with: urlWithoutSuffix) { result in
+            callbackResult = result
+            expectation.fulfill()
+        }
+
+        XCTAssertEqual(callbackResult, .validationFailed)
+
+        sut.getShortUrl(with: onlyHostUrl) { result in
+            callbackResult = result
+            expectation.fulfill()
+        }
+
+        XCTAssertEqual(callbackResult, .validationFailed)
     }
 
     func testGetShortUrlSaveTinyURL() {
         // check if the same tinyUrl objects can be saved
         let tinyUrl = TinyURL(shortURL: "http://tw.gs/Y2r8awk", longURL: "https://foo.pl")
         let urlsArray = BehaviorSubject<[TinyURL]>(value: [tinyUrl])
-        let emptyUrl = "https://foo.pl"
+        let correctUrl = "https://foo.pl"
+        let expectation = XCTestExpectation(description: "callback")
+        var callbackResult: EnumValidation!
         sut = TinyURLViewModel(apiService: mockApiService, urls: urlsArray)
-        sut.getShortUrl(with: emptyUrl, completion: { XCTAssertEqual($0, .alreadyDefined) })
+
+        sut.getShortUrl(with: correctUrl) { result in
+            callbackResult = result
+            expectation.fulfill()
+        }
+
+        XCTAssertEqual(callbackResult, .alreadyDefined)
 
         //check if mockTinyUrl will be saved in empty array
-        let emptyArray = BehaviorSubject<[TinyURL]>(value: [])
-        sut = TinyURLViewModel(apiService: mockApiService, urls: emptyArray)
-        sut.getShortUrl(with: emptyUrl, completion: { XCTAssertEqual($0, .isValid) })
+        var savedTinyUrl: TinyURL!
+        sut = TinyURLViewModel(apiService: mockApiService)
+
+        sut.getShortUrl(with: correctUrl) { result in
+            callbackResult = result
+            expectation.fulfill()
+        }
+
+        sut.urls.bind { tinyUrls in
+            savedTinyUrl = tinyUrls.first
+        }.dispose()
+
+        XCTAssertEqual(callbackResult, .isValid)
+        XCTAssertEqual(savedTinyUrl?.shortURL, tinyUrl.shortURL)
+        XCTAssertEqual(savedTinyUrl?.longURL, tinyUrl.longURL)
+    }
+
+    func testLoadTinyUrl() {
+        let tinyUrl = TinyURL(shortURL: "http://tw.gs/Y2r8awk", longURL: "https://foo.pl")
+        var loadFromUserDefaults: TinyURL!
+        let correctUrl = "https://foo.pl"
+
+        // save tinyUrl in UserDefaults
+        sut.getShortUrl(with: correctUrl) { _ in }
+
+        // load from UserDefaults
+        sut.loadTinyURL()
+
+        sut.urls.bind { tinyUrls in
+            loadFromUserDefaults = tinyUrls.first
+        }.dispose()
+
+        XCTAssertEqual(loadFromUserDefaults?.shortURL, tinyUrl.shortURL)
+        XCTAssertEqual(loadFromUserDefaults?.longURL, tinyUrl.longURL)
     }
 }
