@@ -9,8 +9,13 @@ import Foundation
 import RxSwift
 
 class TinyURLViewModel {
-    private let apiService = ApiService()
-    private(set) var urls = BehaviorSubject<[TinyURL]>(value: [])
+    private let apiService: ApiService
+    private(set) var urls: BehaviorSubject<[TinyURL]>
+
+    init(apiService: ApiService = ApiService(), urls: BehaviorSubject<[TinyURL]> = BehaviorSubject<[TinyURL]>(value: []) ) {
+        self.apiService = apiService
+        self.urls = urls
+    }
 
     // fetching data from api, saving response
     func getShortUrl(with longURL: String, completion: @escaping (EnumValidation) -> Void) {
@@ -23,7 +28,7 @@ class TinyURLViewModel {
         }
     }
 
-    func validation(longURL: String) -> Bool {
+   private func validation(longURL: String) -> Bool {
         let regex = "(?i)https?://(?:www\\.)?\\S+(?:/|\\b)"
         let longURLPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
         return longURLPredicate.evaluate(with: longURL)
@@ -47,5 +52,21 @@ class TinyURLViewModel {
         if let tinyData = UserDefaults.standard.array(forKey: EnumUserDefaults.tinyData.rawValue) as? Array<Data> {
             urls.onNext(ParsingService.parseFromJSON(tinyData: tinyData))
         }
+    }
+
+    func sortingAlgorithm<T: Comparable>(randomNumbers: [T]) -> [T] {
+        var randomNumbers = randomNumbers
+        var counter = 0
+        for i in randomNumbers {
+            counter = randomNumbers.firstIndex(of: i)!
+            while counter < randomNumbers.count - 1 {
+                if i > randomNumbers[counter + 1] {
+                    randomNumbers[randomNumbers.firstIndex(of: i)!] = randomNumbers[counter + 1]
+                    randomNumbers[counter + 1] = i
+                }
+                counter += 1
+            }
+        }
+        return randomNumbers
     }
 }

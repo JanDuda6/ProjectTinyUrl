@@ -15,10 +15,8 @@ target 'Project Tiny Url' do
   target 'Project Tiny UrlTests' do
     inherit! :search_paths
     # Pods for testing
-  end
-
-  target 'Project Tiny UrlUITests' do
-    # Pods for testing
+    pod 'RxSwift', '~> 5'
+    pod 'RxCocoa', '~> 5'
   end
 
 end
