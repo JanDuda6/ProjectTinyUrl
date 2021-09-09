@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24EE2FB901F601A9F9291273 /* Pods_Project_Tiny_UrlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F955729D3268BCBA43683657 /* Pods_Project_Tiny_UrlTests.framework */; };
+		3F580714C7522D886EE85EB6 /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8841C4D021702275EA3AA5E /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework */; };
 		42EA4C9786C1A494425DB6C1 /* Pods_Project_Tiny_Url.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BB4EB912749C1DD3A73405 /* Pods_Project_Tiny_Url.framework */; };
-		9E742BC5B69F4D688637BD08 /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8841C4D021702275EA3AA5E /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework */; };
 		C5205F7B26CBC9F100E9CD73 /* EnumUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5205F7A26CBC9F100E9CD73 /* EnumUserDefaults.swift */; };
 		C5205F8126CCF7B800E9CD73 /* EnumValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5205F8026CCF7B800E9CD73 /* EnumValidation.swift */; };
 		C552404A269DE7C60050B53D /* ParsingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5524049269DE7C60050B53D /* ParsingService.swift */; };
 		C558B9EF26CAA20300B634C8 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C558B9EE26CAA20300B634C8 /* CustomTableViewCell.swift */; };
+		C59024BC26E20FD1000A8227 /* ProjectTinyUrlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59024BB26E20FD1000A8227 /* ProjectTinyUrlUITests.swift */; };
 		C5DDD910269DAEE8001EF502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */; };
 		C5DDD912269DAEE8001EF502 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */; };
 		C5DDD914269DAEE8001EF502 /* TinyURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDD913269DAEE8001EF502 /* TinyURLViewController.swift */; };
@@ -28,14 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C5DDD923269DAEEA001EF502 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5DDD904269DAEE8001EF502 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C5DDD90B269DAEE8001EF502;
-			remoteInfo = "Project Tiny Url";
-		};
-		C5DDD92E269DAEEA001EF502 /* PBXContainerItemProxy */ = {
+		C59024BE26E20FD1000A8227 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C5DDD904269DAEE8001EF502 /* Project object */;
 			proxyType = 1;
@@ -54,6 +47,9 @@
 		C5205F8026CCF7B800E9CD73 /* EnumValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumValidation.swift; sourceTree = "<group>"; };
 		C5524049269DE7C60050B53D /* ParsingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingService.swift; sourceTree = "<group>"; };
 		C558B9EE26CAA20300B634C8 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		C59024B926E20FD1000A8227 /* Project Tiny UrlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project Tiny UrlUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C59024BB26E20FD1000A8227 /* ProjectTinyUrlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTinyUrlUITests.swift; sourceTree = "<group>"; };
+		C59024BD26E20FD1000A8227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5DDD90C269DAEE8001EF502 /* Project Tiny Url.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Tiny Url.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DDD90F269DAEE8001EF502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5DDD911269DAEE8001EF502 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,8 +58,6 @@
 		C5DDD918269DAEEA001EF502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5DDD91B269DAEEA001EF502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5DDD91D269DAEEA001EF502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5DDD922269DAEEA001EF502 /* Project Tiny UrlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project Tiny UrlTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5DDD92D269DAEEA001EF502 /* Project Tiny UrlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project Tiny UrlUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DDD944269DB3DA001EF502 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		C5DDD946269DB406001EF502 /* TinyURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyURL.swift; sourceTree = "<group>"; };
 		C5DDD948269DB9CC001EF502 /* TinyURLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyURLViewModel.swift; sourceTree = "<group>"; };
@@ -76,27 +70,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C59024B626E20FD1000A8227 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F580714C7522D886EE85EB6 /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5DDD909269DAEE8001EF502 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				42EA4C9786C1A494425DB6C1 /* Pods_Project_Tiny_Url.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C5DDD91F269DAEEA001EF502 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24EE2FB901F601A9F9291273 /* Pods_Project_Tiny_UrlTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C5DDD92A269DAEEA001EF502 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9E742BC5B69F4D688637BD08 /* Pods_Project_Tiny_Url_Project_Tiny_UrlUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,10 +138,20 @@
 			path = "Custom Objects";
 			sourceTree = "<group>";
 		};
+		C59024BA26E20FD1000A8227 /* Project Tiny UrlUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C59024BB26E20FD1000A8227 /* ProjectTinyUrlUITests.swift */,
+				C59024BD26E20FD1000A8227 /* Info.plist */,
+			);
+			path = "Project Tiny UrlUITests";
+			sourceTree = "<group>";
+		};
 		C5DDD903269DAEE8001EF502 = {
 			isa = PBXGroup;
 			children = (
 				C5DDD90E269DAEE8001EF502 /* Project Tiny Url */,
+				C59024BA26E20FD1000A8227 /* Project Tiny UrlUITests */,
 				C5DDD90D269DAEE8001EF502 /* Products */,
 				13B53AD4F5937E98AD9BB4E0 /* Pods */,
 				3136BB79E849E7E2B29873C7 /* Frameworks */,
@@ -166,8 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				C5DDD90C269DAEE8001EF502 /* Project Tiny Url.app */,
-				C5DDD922269DAEEA001EF502 /* Project Tiny UrlTests.xctest */,
-				C5DDD92D269DAEEA001EF502 /* Project Tiny UrlUITests.xctest */,
+				C59024B926E20FD1000A8227 /* Project Tiny UrlUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,6 +231,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C59024B826E20FD1000A8227 /* Project Tiny UrlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C59024C026E20FD1000A8227 /* Build configuration list for PBXNativeTarget "Project Tiny UrlUITests" */;
+			buildPhases = (
+				7EB7A44C8C569A6802C5B89C /* [CP] Check Pods Manifest.lock */,
+				C59024B526E20FD1000A8227 /* Sources */,
+				C59024B626E20FD1000A8227 /* Frameworks */,
+				C59024B726E20FD1000A8227 /* Resources */,
+				BA0A683094AD7000A94D6923 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C59024BF26E20FD1000A8227 /* PBXTargetDependency */,
+			);
+			name = "Project Tiny UrlUITests";
+			productName = "Project Tiny UrlUITests";
+			productReference = C59024B926E20FD1000A8227 /* Project Tiny UrlUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		C5DDD90B269DAEE8001EF502 /* Project Tiny Url */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5DDD936269DAEEA001EF502 /* Build configuration list for PBXNativeTarget "Project Tiny Url" */;
@@ -255,45 +270,6 @@
 			productReference = C5DDD90C269DAEE8001EF502 /* Project Tiny Url.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C5DDD921269DAEEA001EF502 /* Project Tiny UrlTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C5DDD939269DAEEA001EF502 /* Build configuration list for PBXNativeTarget "Project Tiny UrlTests" */;
-			buildPhases = (
-				D16305A214B1F4A3D3D5539E /* [CP] Check Pods Manifest.lock */,
-				C5DDD91E269DAEEA001EF502 /* Sources */,
-				C5DDD91F269DAEEA001EF502 /* Frameworks */,
-				C5DDD920269DAEEA001EF502 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C5DDD924269DAEEA001EF502 /* PBXTargetDependency */,
-			);
-			name = "Project Tiny UrlTests";
-			productName = "Project Tiny UrlTests";
-			productReference = C5DDD922269DAEEA001EF502 /* Project Tiny UrlTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		C5DDD92C269DAEEA001EF502 /* Project Tiny UrlUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C5DDD93C269DAEEA001EF502 /* Build configuration list for PBXNativeTarget "Project Tiny UrlUITests" */;
-			buildPhases = (
-				5BD1AB35A79E7D8A0FAAD1C0 /* [CP] Check Pods Manifest.lock */,
-				C5DDD929269DAEEA001EF502 /* Sources */,
-				C5DDD92A269DAEEA001EF502 /* Frameworks */,
-				C5DDD92B269DAEEA001EF502 /* Resources */,
-				AC24B9E1FEEE81E0EE41A541 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C5DDD92F269DAEEA001EF502 /* PBXTargetDependency */,
-			);
-			name = "Project Tiny UrlUITests";
-			productName = "Project Tiny UrlUITests";
-			productReference = C5DDD92D269DAEEA001EF502 /* Project Tiny UrlUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -303,16 +279,12 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					C59024B826E20FD1000A8227 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = C5DDD90B269DAEE8001EF502;
+					};
 					C5DDD90B269DAEE8001EF502 = {
 						CreatedOnToolsVersion = 12.5.1;
-					};
-					C5DDD921269DAEEA001EF502 = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = C5DDD90B269DAEE8001EF502;
-					};
-					C5DDD92C269DAEEA001EF502 = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = C5DDD90B269DAEE8001EF502;
 					};
 				};
 			};
@@ -331,13 +303,19 @@
 			projectRoot = "";
 			targets = (
 				C5DDD90B269DAEE8001EF502 /* Project Tiny Url */,
-				C5DDD921269DAEEA001EF502 /* Project Tiny UrlTests */,
-				C5DDD92C269DAEEA001EF502 /* Project Tiny UrlUITests */,
+				C59024B826E20FD1000A8227 /* Project Tiny UrlUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C59024B726E20FD1000A8227 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5DDD90A269DAEE8001EF502 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,20 +324,6 @@
 				C5F2460026C517BD0025F13C /* Localizable.strings in Resources */,
 				C5DDD919269DAEEA001EF502 /* Assets.xcassets in Resources */,
 				C5DDD917269DAEE8001EF502 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C5DDD920269DAEEA001EF502 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C5DDD92B269DAEEA001EF502 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +347,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project Tiny Url/Pods-Project Tiny Url-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5BD1AB35A79E7D8A0FAAD1C0 /* [CP] Check Pods Manifest.lock */ = {
+		7EB7A44C8C569A6802C5B89C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -427,7 +391,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC24B9E1FEEE81E0EE41A541 /* [CP] Embed Pods Frameworks */ = {
+		BA0A683094AD7000A94D6923 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -444,31 +408,17 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project Tiny Url-Project Tiny UrlUITests/Pods-Project Tiny Url-Project Tiny UrlUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D16305A214B1F4A3D3D5539E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Project Tiny UrlTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C59024B526E20FD1000A8227 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C59024BC26E20FD1000A8227 /* ProjectTinyUrlUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5DDD908269DAEE8001EF502 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -487,32 +437,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5DDD91E269DAEEA001EF502 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C5DDD929269DAEEA001EF502 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C5DDD924269DAEEA001EF502 /* PBXTargetDependency */ = {
+		C59024BF26E20FD1000A8227 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C5DDD90B269DAEE8001EF502 /* Project Tiny Url */;
-			targetProxy = C5DDD923269DAEEA001EF502 /* PBXContainerItemProxy */;
-		};
-		C5DDD92F269DAEEA001EF502 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C5DDD90B269DAEE8001EF502 /* Project Tiny Url */;
-			targetProxy = C5DDD92E269DAEEA001EF502 /* PBXContainerItemProxy */;
+			targetProxy = C59024BE26E20FD1000A8227 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -544,6 +475,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C59024C126E20FD1000A8227 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 351433DC35419752031EF50D /* Pods-Project Tiny Url-Project Tiny UrlUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HC9J79NVUW;
+				INFOPLIST_FILE = "Project Tiny UrlUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.janduda.Project-Tiny-UrlUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Project Tiny Url";
+			};
+			name = Debug;
+		};
+		C59024C226E20FD1000A8227 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41EE9B6A2C76B76189DC2855 /* Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HC9J79NVUW;
+				INFOPLIST_FILE = "Project Tiny UrlUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.janduda.Project-Tiny-UrlUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Project Tiny Url";
+			};
+			name = Release;
+		};
 		C5DDD934269DAEEA001EF502 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -702,97 +673,18 @@
 			};
 			name = Release;
 		};
-		C5DDD93A269DAEEA001EF502 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 690260145F2ED9C71DE3C7F6 /* Pods-Project Tiny UrlTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HC9J79NVUW;
-				INFOPLIST_FILE = "Project Tiny UrlTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.janduda.Project-Tiny-UrlTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project Tiny Url.app/Project Tiny Url";
-			};
-			name = Debug;
-		};
-		C5DDD93B269DAEEA001EF502 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD874E8AE698E64B4FA2373C /* Pods-Project Tiny UrlTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HC9J79NVUW;
-				INFOPLIST_FILE = "Project Tiny UrlTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.janduda.Project-Tiny-UrlTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project Tiny Url.app/Project Tiny Url";
-			};
-			name = Release;
-		};
-		C5DDD93D269DAEEA001EF502 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 351433DC35419752031EF50D /* Pods-Project Tiny Url-Project Tiny UrlUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HC9J79NVUW;
-				INFOPLIST_FILE = "Project Tiny UrlUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.janduda.Project-Tiny-UrlUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Project Tiny Url";
-			};
-			name = Debug;
-		};
-		C5DDD93E269DAEEA001EF502 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41EE9B6A2C76B76189DC2855 /* Pods-Project Tiny Url-Project Tiny UrlUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HC9J79NVUW;
-				INFOPLIST_FILE = "Project Tiny UrlUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.janduda.Project-Tiny-UrlUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Project Tiny Url";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C59024C026E20FD1000A8227 /* Build configuration list for PBXNativeTarget "Project Tiny UrlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C59024C126E20FD1000A8227 /* Debug */,
+				C59024C226E20FD1000A8227 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C5DDD907269DAEE8001EF502 /* Build configuration list for PBXProject "Project Tiny Url" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -807,24 +699,6 @@
 			buildConfigurations = (
 				C5DDD937269DAEEA001EF502 /* Debug */,
 				C5DDD938269DAEEA001EF502 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C5DDD939269DAEEA001EF502 /* Build configuration list for PBXNativeTarget "Project Tiny UrlTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C5DDD93A269DAEEA001EF502 /* Debug */,
-				C5DDD93B269DAEEA001EF502 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C5DDD93C269DAEEA001EF502 /* Build configuration list for PBXNativeTarget "Project Tiny UrlUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C5DDD93D269DAEEA001EF502 /* Debug */,
-				C5DDD93E269DAEEA001EF502 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
